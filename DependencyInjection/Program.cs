@@ -2,8 +2,8 @@
 using DependencyInjection;
 
 // 0 
-// var service = new DoSomeWorkService();
-// var consumer = new ServiceConsumer(service);
+var service = new DoSomeWorkService();
+var consumer = new ServiceConsumer(service);
 
 
 //1
@@ -11,7 +11,7 @@ using DependencyInjection;
 // var consumer = (ServiceConsumer) Activator.CreateInstance(typeof(ServiceConsumer), service);
 
 // 3 
- var container = new DependencyContainer();
+ //var container = new DependencyContainer();
  // container.Register<DoSomeWorkService>();
  // container.Register<ServiceConsumer>();
  // container.Register<TextProvidorService>(); // 4
@@ -20,27 +20,27 @@ using DependencyInjection;
  // container.RegisterSingleton<ServiceConsumer>();
  // container.RegisterSingleton<TextProvidorService>();
  
- 
- container.RegisterTransient<DoSomeWorkService>();
- container.RegisterTransient<ServiceConsumer>();
- container.RegisterTransient<TextProvidorService>();
- 
-var resolver = new DependencyResolver(container);
-
- var service = resolver.Resolve<DoSomeWorkService>();
- var consumer = resolver.Resolve<ServiceConsumer>();
- var consumer1 = resolver.Resolve<ServiceConsumer>();
- var consumer2 = resolver.Resolve<ServiceConsumer>();
+ //
+ // container.RegisterTransient<DoSomeWorkService>();
+ // container.RegisterTransient<ServiceConsumer>();
+ // container.RegisterTransient<TextProvidorService>();
+ //
+// var resolver = new DependencyResolver(container);
+//
+//  var service = resolver.Resolve<DoSomeWorkService>();
+//  var consumer = resolver.Resolve<ServiceConsumer>();
+//  var consumer1 = resolver.Resolve<ServiceConsumer>();
+//  var consumer2 = resolver.Resolve<ServiceConsumer>();
   
  
  
 
 // result 
-consumer.Print("This is a message from the consumer.");
-consumer1.Print("This is a message from the consumer.");
-consumer2.Print("This is a message from the consumer.");
-
-service.Print("This is a message from the service.");
+ consumer.Print("This is a message from the consumer.");
+// consumer1.Print("This is a message from the consumer.");
+// consumer2.Print("This is a message from the consumer.");
+//
+// service.Print("This is a message from the service.");
 
 
 
@@ -57,7 +57,7 @@ Console.ReadLine();
 
 
 
-// عندنا انواع من الـ Dependency Injection
+// types of  Dependency Injection
 // Constructor Injection
 // Property Injection
 // Method Injection
